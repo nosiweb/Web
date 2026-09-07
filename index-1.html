@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NosiWeb — Web Design</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#f3f3ef;color:#111;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+header{position:fixed;top:0;left:0;width:100%;height:72px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;z-index:10;transition:.3s}
+header.scrolled{background:rgba(243,243,239,.92);backdrop-filter:blur(12px);border-bottom:1px solid #ddd}
+.logo{font-size:25px;font-weight:800;letter-spacing:-1px}.logo span{color:#888}
+nav{display:flex;gap:28px;font-size:14px}
+nav a:hover{color:#777}.nav-btn{background:#111;color:#fff;padding:12px 19px;border-radius:30px;font-size:13px;font-weight:bold}
+.menu{display:none;background:none;border:0;font-size:27px}
+.mobile-nav{display:none}
+
+.hero{min-height:100vh;padding:130px 7% 70px;display:flex;align-items:center;justify-content:space-between;gap:55px}
+.hero-text{width:55%}.label{font-size:11px;letter-spacing:2px;color:#777;font-weight:bold;margin-bottom:25px;display:flex;gap:8px;align-items:center}.dot{width:7px;height:7px;border-radius:50%;background:#111}
+.hero h1{font-size:clamp(50px,8vw,105px);line-height:.9;letter-spacing:-6px}
+.hero h1 span,.section-title span,.showcase h2 span,.contact-box h2 span{color:#999}
+.hero p{max-width:520px;margin-top:30px;font-size:18px;color:#666;line-height:1.6}
+.buttons{display:flex;gap:12px;margin-top:30px}.btn{padding:15px 22px;border-radius:30px;font-size:13px;font-weight:bold}.black{background:#111;color:#fff}.outline{border:1px solid #ccc}
+
+.hero-card-area{width:42%;position:relative}.website-card{background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 30px 70px #0002;transform:rotate(2deg);transition:.4s}.website-card:hover{transform:rotate(0) translateY(-7px)}
+.card-top{height:45px;border-bottom:1px solid #eee;display:flex;align-items:center;padding:0 17px}.windows{display:flex;gap:5px}.windows i{width:7px;height:7px;border-radius:50%;background:#ccc}.address{margin:auto;color:#aaa;font-size:10px}
+.card-content{height:395px;padding:55px 35px;background:linear-gradient(135deg,#ddd,#fafaf8)}.card-content small{color:#777;font-size:9px;letter-spacing:2px}.card-content h2{font-size:50px;line-height:.95;letter-spacing:-4px;margin-top:20px}.card-content h2 span{color:#888}.fake-btn{display:inline-block;margin-top:25px;background:#111;color:#fff;border-radius:25px;padding:11px 17px;font-size:10px}
+.float{position:absolute;background:#fff;padding:14px 17px;border-radius:14px;box-shadow:0 15px 35px #0002;font-size:12px}.float strong{display:block;font-size:20px}.float small{color:#888}.float-one{left:-25px;bottom:30px}.float-two{right:-25px;top:40px}
+
+section:not(.hero){padding:115px 7%}.section-number{font-size:11px;letter-spacing:2px;color:#888;font-weight:bold}.section-title{margin-top:20px;font-size:clamp(42px,6vw,80px);line-height:.95;letter-spacing:-4px}
+.intro{border-top:1px solid #ddd}.intro-content{max-width:900px;margin:50px 0 0 14%}.intro-content p{max-width:570px;margin-top:30px;color:#666;font-size:18px;line-height:1.7}
+
+.services{background:#111;color:#fff}.services .section-number{color:#777}.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#333;margin-top:60px}.service{min-height:300px;padding:40px;background:#111;transition:.3s}.service:hover{background:#1d1d1d}.service.big{grid-row:span 2;min-height:601px}.service-icon{font-size:34px;margin-bottom:65px}.service h3{font-size:27px;margin-bottom:12px}.service p{color:#999;line-height:1.6;max-width:400px}.service a{display:inline-block;margin-top:22px;font-size:13px}
+
+.why{border-top:1px solid #ddd}.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:100px;margin-top:65px}.why-big{font-size:clamp(50px,6vw,85px);line-height:.9;letter-spacing:-5px;font-weight:800}.why-big span{color:#aaa}.why-item{padding:27px 0;border-top:1px solid #ddd;display:grid;grid-template-columns:40px 1fr;gap:20px}.why-item>span{font-size:11px;color:#999}.why-item h3{font-size:20px;margin-bottom:8px}.why-item p{color:#777;line-height:1.6}
+
+.showcase{padding-top:55px!important;padding-bottom:55px!important}.showcase-box{min-height:580px;background:#202020;border-radius:34px;color:#fff;padding:75px;position:relative;overflow:hidden;display:flex;align-items:center}.showcase-box:after{content:"";position:absolute;width:430px;height:430px;border-radius:50%;right:8%;top:50%;transform:translateY(-50%);background:radial-gradient(circle,#777,#333 50%,transparent 70%);opacity:.6}.showcase-content{max-width:600px;position:relative;z-index:2}.showcase-content h2{font-size:clamp(48px,6vw,85px);line-height:.9;letter-spacing:-5px;margin:25px 0}.showcase-content p{color:#aaa;max-width:470px;line-height:1.6;margin-bottom:30px}.white-btn{display:inline-block;padding:15px 22px;border-radius:30px;background:#fff;color:#111;font-size:13px;font-weight:bold}.nw-circle{position:absolute;right:14%;top:50%;transform:translateY(-50%);width:270px;height:270px;border:1px solid #777;border-radius:50%;display:grid;place-items:center;z-index:3}.nw-circle div{width:160px;height:160px;background:#f3f3ef;color:#111;border-radius:50%;display:grid;place-items:center;font-size:42px;font-weight:900}
+
+.pricing{border-top:1px solid #ddd}.pricing-grid{margin-top:60px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.price{background:#fff;border:1px solid #ddd;border-radius:22px;padding:35px;position:relative}.price.featured{background:#111;color:#fff}.popular{position:absolute;right:20px;top:20px;background:#333;padding:7px 10px;border-radius:20px;font-size:8px;letter-spacing:1px}.plan{color:#888;font-size:10px;font-weight:bold;letter-spacing:2px}.price h3{font-size:50px;margin:20px 0 10px;letter-spacing:-3px}.price-description{color:#777;min-height:65px;font-size:14px;line-height:1.5}.featured .price-description{color:#aaa}.price hr{border:0;border-top:1px solid #ddd;margin:25px 0}.featured hr{border-color:#333}.price ul{list-style:none}.price li{font-size:13px;padding:8px 0}.price-button{display:block;text-align:center;margin-top:25px;padding:14px;border:1px solid #ccc;border-radius:30px;font-size:12px;font-weight:bold}.featured .price-button{background:#fff;color:#111;border-color:#fff}
+
+.quote{text-align:center;max-width:1050px;margin:auto}.quote-symbol{font-size:90px;color:#bbb;height:75px}.quote-text{font-size:clamp(38px,5vw,68px);line-height:1;letter-spacing:-4px;font-weight:800}.quote-text span{color:#999}.quote-author{margin-top:25px;color:#888;font-size:12px}
+
+.faq{border-top:1px solid #ddd;display:grid;grid-template-columns:1fr 1fr;gap:100px}.faq-list{border-top:1px solid #ddd}.faq-question{width:100%;padding:25px 0;background:none;border:0;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;text-align:left;font-size:15px;font-weight:bold;cursor:pointer}.faq-question span{font-size:20px;transition:.3s}.faq-answer{max-height:0;overflow:hidden;transition:.35s}.faq-answer p{padding:20px 20px 25px 0;color:#777;font-size:14px;line-height:1.6}.faq-item.active .faq-question span{transform:rotate(45deg)}
+
+.contact{padding-top:55px!important;padding-bottom:55px!important}.contact-box{min-height:520px;padding:65px;border-radius:34px;background:#111;color:#fff;display:flex;justify-content:space-between;align-items:flex-end;gap:50px}.contact-box h2{font-size:clamp(48px,6vw,82px);line-height:.9;letter-spacing:-5px;margin:25px 0}.contact-box p{color:#999;max-width:430px;line-height:1.6}.contact-buttons{display:flex;flex-direction:column;gap:12px;min-width:220px}.contact-btn{padding:16px 20px;background:#fff;color:#111;border-radius:30px;font-size:13px;font-weight:bold;display:flex;justify-content:space-between}.contact-btn.whatsapp{background:transparent;color:#fff;border:1px solid #444}
+
+footer{padding:45px 7% 30px;border-top:1px solid #ddd}.footer-top{display:flex;justify-content:space-between;padding-bottom:35px;border-bottom:1px solid #ddd}.footer-logo{font-size:27px;font-weight:900}.footer-logo span{color:#888}.footer-top p,.footer-bottom{color:#888;font-size:12px}.footer-bottom{padding-top:25px;display:flex;justify-content:space-between}.footer-links{display:flex;gap:25px}
+
+.reveal{opacity:0;transform:translateY(25px);transition:.7s}.reveal.show{opacity:1;transform:none}
+
+@media(max-width:800px){
+header{height:68px}nav,.nav-btn{display:none}.menu{display:block}.mobile-nav{position:fixed;top:68px;left:0;width:100%;background:#f3f3ef;border-bottom:1px solid #ddd;padding:15px 6%;z-index:9}.mobile-nav.open{display:block}.mobile-nav a{display:block;padding:14px 0;border-bottom:1px solid #ddd}
+.hero{padding-top:115px;flex-direction:column;align-items:flex-start}.hero-text,.hero-card-area{width:100%}.hero h1{font-size:clamp(52px,15vw,78px);letter-spacing:-4px}.website-card{transform:none}.float-one{left:-5px}.float-two{right:-5px}
+section:not(.hero){padding:85px 6%}.intro-content{margin-left:0}.services-grid,.pricing-grid{grid-template-columns:1fr}.service.big{grid-row:auto;min-height:400px}.why-grid,.faq{grid-template-columns:1fr;gap:55px}.showcase-box{padding:45px;min-height:650px;align-items:flex-start}.nw-circle{width:220px;height:220px;right:-30px;top:auto;bottom:-20px;transform:none}.nw-circle div{width:140px;height:140px}.contact-box{padding:45px;min-height:620px;flex-direction:column;align-items:flex-start;justify-content:flex-end}.contact-buttons{width:100%}.footer-top,.footer-bottom{flex-direction:column;gap:18px}
+}
+@media(max-width:430px){.hero{padding-left:5%;padding-right:5%}.hero h1{font-size:53px}.buttons{flex-direction:column;width:100%}.btn{text-align:center}.card-content h2{font-size:40px}.showcase-box,.contact-box{padding:35px}.showcase-content h2{font-size:50px}}
+</style>
+</head>
+<body>
+
+<header id="header">
+<a href="#home" class="logo">Nosi<span>Web</span></a>
+<nav>
+<a href="#services">Services</a><a href="#why">Why Us</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+</nav>
+<a href="#contact" class="nav-btn">Get Started</a>
+<button class="menu" id="menuButton">☰</button>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+<a href="#services">Services</a><a href="#why">Why Us</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+</div>
+
+<section class="hero" id="home">
+<div class="hero-text">
+<div class="label reveal"><span class="dot"></span> WEB DESIGN & DEVELOPMENT</div>
+<h1 class="reveal">Your business<br>deserves a<br><span>better web.</span></h1>
+<p class="reveal">Modern, fast and professional websites designed to help your business look better and reach more customers.</p>
+<div class="buttons reveal"><a href="#pricing" class="btn black">View Plans →</a><a href="#services" class="btn outline">Explore Services</a></div>
+</div>
+<div class="hero-card-area reveal">
+<div class="website-card">
+<div class="card-top"><div class="windows"><i></i><i></i><i></i></div><div class="address">nosiweb.com</div></div>
+<div class="card-content"><small>YOUR DIGITAL PRESENCE</small><h2>Make your<br>first impression<br><span>count.</span></h2><div class="fake-btn">Discover more →</div></div>
+</div>
+<div class="float float-one"><strong>100%</strong><small>Responsive</small></div>
+<div class="float float-two"><strong>Fast</strong><small>Performance</small></div>
+</div>
+</section>
+
+<section class="intro">
+<div class="section-number">01 — NOSIWEB</div>
+<div class="intro-content"><h2 class="section-title">We build websites <span>people remember.</span></h2><p>Your website is often the first thing your customers see. NosiWeb creates clean, modern and easy-to-use websites that represent your business professionally.</p></div>
+</section>
+
+<section class="services" id="services">
+<div class="section-number">02 — SERVICES</div>
+<h2 class="section-title">Everything you need<br>to go <span>online.</span></h2>
+<div class="services-grid">
+<div class="service big reveal"><div class="service-icon">✦</div><h3>Business Websites</h3><p>Professional websites for shops, companies, startups and local businesses.</p><a href="#contact">Learn more →</a></div>
+<div class="service reveal"><div class="service-icon">◌</div><h3>Landing Pages</h3><p>Focused pages designed to introduce your business and turn visitors into customers.</p><a href="#contact">Learn more →</a></div>
+<div class="service reveal"><div class="service-icon">⌁</div><h3>Website Redesign</h3><p>Give your existing website a cleaner, faster and more modern appearance.</p><a href="#contact">Learn more →</a></div>
+<div class="service reveal"><div class="service-icon">↗</div><h3>Responsive Design</h3><p>Your website will look great on mobile, tablet and desktop.</p><a href="#contact">Learn more →</a></div>
+<div class="service reveal"><div class="service-icon">◎</div><h3>Maintenance</h3><p>Website updates, content changes and technical support whenever you need it.</p><a href="#contact">Learn more →</a></div>
+</div>
+</section>
+
+<section class="why" id="why">
+<div class="section-number">03 — WHY NOSIWEB</div>
+<div class="why-grid">
+<div class="why-big">Simple.<br><span>Professional.</span><br>Effective.</div>
+<div>
+<div class="why-item reveal"><span>01</span><div><h3>Made for your business</h3><p>Your website is built around your business and your customers.</p></div></div>
+<div class="why-item reveal"><span>02</span><div><h3>Mobile first</h3><p>A smooth experience for people using smartphones and tablets.</p></div></div>
+<div class="why-item reveal"><span>03</span><div><h3>Fast & lightweight</h3><p>Clean code and optimized design help your pages load quickly.</p></div></div>
+<div class="why-item reveal"><span>04</span><div><h3>Easy to use</h3><p>Clear navigation makes it easy for customers to find what they need.</p></div></div>
+</div>
+</div>
+</section>
+
+<section class="showcase">
+<div class="showcase-box reveal">
+<div class="showcase-content"><small>THE NOSIWEB EXPERIENCE</small><h2>Turn visitors<br>into <span>customers.</span></h2><p>A good website should not only look beautiful. It should make it easy for people to understand your business and take action.</p><a href="#contact" class="white-btn">Start your website →</a></div>
+<div class="nw-circle"><div>NW</div></div>
+</div>
+</section>
+
+<section class="pricing" id="pricing">
+<div class="section-number">04 — PRICING</div>
+<h2 class="section-title">Choose what<br>works for <span>you.</span></h2>
+<div class="pricing-grid">
+<div class="price reveal"><div class="plan">STARTER</div><h3>₹2,999</h3><p class="price-description">For individuals and small businesses who need a simple online presence.</p><hr><ul><li>✓ One-page website</li><li>✓ Mobile responsive</li><li>✓ Contact section</li><li>✓ WhatsApp button</li><li>✓ Basic animations</li></ul><a href="#contact" class="price-button">Choose Starter →</a></div>
+<div class="price featured reveal"><div class="popular">MOST POPULAR</div><div class="plan">BUSINESS</div><h3>₹5,999</h3><p class="price-description">A complete professional website for growing businesses.</p><hr><ul><li>✓ Up to 5 pages</li><li>✓ Mobile responsive</li><li>✓ Modern animations</li><li>✓ Contact form</li><li>✓ WhatsApp integration</li><li>✓ Basic SEO setup</li></ul><a href="#contact" class="price-button">Choose Business →</a></div>
+<div class="price reveal"><div class="plan">PREMIUM</div><h3>₹9,999+</h3><p class="price-description">Custom websites for businesses that need something more advanced.</p><hr><ul><li>✓ Custom design</li><li>✓ Multiple pages</li><li>✓ Advanced animations</li><li>✓ Forms & integrations</li><li>✓ SEO setup</li><li>✓ Priority support</li></ul><a href="#contact" class="price-button">Discuss Project →</a></div>
+</div>
+</section>
+
+<section class="quote">
+<div class="quote-symbol">“</div>
+<div class="quote-text">A website should not just <span>exist.</span> It should help your business grow.</div>
+<div class="quote-author">— NosiWeb</div>
+</section>
+
+<section class="faq" id="faq">
+<div><div class="section-number">05 — FAQ</div><h2 class="section-title">Got questions?<br>We've got <span>answers.</span></h2></div>
+<div class="faq-list">
+<div class="faq-item"><button class="faq-question">How long does a website take?<span>+</span></button><div class="faq-answer"><p>A simple website can usually be completed within a few days. Larger websites can take longer depending on the project.</p></div></div>
+<div class="faq-item"><button class="faq-question">Will my website work on mobile?<span>+</span></button><div class="faq-answer"><p>Yes. NosiWeb websites are designed to work on phones, tablets and desktop computers.</p></div></div>
+<div class="faq-item"><button class="faq-question">Can I change the website later?<span>+</span></button><div class="faq-answer"><p>Yes. Text, images, prices, services and other content can be updated later.</p></div></div>
+<div class="faq-item"><button class="faq-question">Do you provide hosting?<span>+</span></button><div class="faq-answer"><p>Hosting and domain can be arranged separately, or you can use your own hosting and domain.</p></div></div>
+<div class="faq-item"><button class="faq-question">How do I order a website?<span>+</span></button><div class="faq-answer"><p>Contact NosiWeb and tell us about your business, the type of website you need and any features you want.</p></div></div>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="contact-box">
+<div><div class="section-number">06 — CONTACT</div><h2>Ready to build<br>something <span>great?</span></h2><p>Tell us about your project and let's create a website for your business.</p></div>
+<div class="contact-buttons">
+<a href="mailto:nosibul@example.com" class="contact-btn">Email NosiWeb <span>↗</span></a>
+<a href="https://wa.me/910000000000" target="_blank" rel="noopener" class="contact-btn whatsapp">WhatsApp <span>↗</span></a>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="footer-top"><div class="footer-logo">Nosi<span>Web</span></div><p>Websites that work for you.</p></div>
+<div class="footer-bottom"><span>© <span id="year"></span> NosiWeb. All rights reserved.</span><div class="footer-links"><a href="#home">Home</a><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a></div></div>
+</footer>
+
+<script>
+window.addEventListener("scroll",function(){
+ document.getElementById("header").classList.toggle("scrolled",window.scrollY>30);
+});
+const menuButton=document.getElementById("menuButton"),mobileNav=document.getElementById("mobileNav");
+menuButton.addEventListener("click",()=>mobileNav.classList.toggle("open"));
+document.querySelectorAll(".mobile-nav a").forEach(a=>a.addEventListener("click",()=>mobileNav.classList.remove("open")));
+document.querySelectorAll(".faq-question").forEach(button=>{
+ button.addEventListener("click",()=>{
+  const item=button.parentElement,answer=item.querySelector(".faq-answer"),open=item.classList.contains("active");
+  document.querySelectorAll(".faq-item").forEach(x=>{x.classList.remove("active");x.querySelector(".faq-answer").style.maxHeight=null});
+  if(!open){item.classList.add("active");answer.style.maxHeight=answer.scrollHeight+"px"}
+ });
+});
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("show");observer.unobserve(e.target)}})
+},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(x=>observer.observe(x));
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
