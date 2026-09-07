@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NosiWeb — Websites That Work For You</title>
+
+<meta name="description"
+content="NosiWeb creates modern, responsive and professional websites for businesses and individuals.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   NOSIWEB — COMPLETE SINGLE FILE WEBSITE
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #f5f5f2;
+    color: #111;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 82px;
+
+    padding: 0 6vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 1000;
+
+    transition: all .3s ease;
+}
+
+.navbar.scrolled {
+    background: rgba(245,245,242,.88);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 1px 0 rgba(0,0,0,.06);
+}
+
+.logo {
+    font-family: "Manrope", sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+.logo span {
+    color: #777;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    transition: .25s;
+}
+
+.nav-links a:hover {
+    color: #888;
+}
+
+.nav-button {
+    padding: 13px 21px;
+    border-radius: 50px;
+
+    background: #111;
+    color: #fff;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: .25s;
+}
+
+.nav-button:hover {
+    transform: translateY(-2px);
+}
+
+.menu-btn {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    border: 0;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.menu-btn span {
+    display: block;
+
+    width: 23px;
+    height: 2px;
+
+    margin: 5px auto;
+
+    background: #111;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 100vh;
+
+    padding: 150px 8vw 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 70px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+
+    width: 650px;
+    height: 650px;
+
+    right: -180px;
+    top: 80px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(205,205,196,.7),
+            transparent 68%
+        );
+
+    pointer-events: none;
+}
+
+.hero-content {
+    max-width: 680px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.small-label {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 28px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #111;
+
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%,100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .3;
+    }
+}
+
+.hero h1 {
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(55px, 7vw, 105px);
+
+    line-height: .94;
+
+    letter-spacing: -6px;
+
+    font-weight: 800;
+}
+
+.hero h1 span {
+    color: #8c8c86;
+}
+
+.hero-text {
+    max-width: 510px;
+
+    margin-top: 32px;
+
+    color: #666;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+
+    gap: 13px;
+
+    margin-top: 35px;
+}
+
+.primary-btn,
+.secondary-btn {
+    padding: 16px 24px;
+
+    border-radius: 50px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: .25s;
+}
+
+.primary-btn {
+    background: #111;
+    color: #fff;
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+}
+
+.primary-btn span {
+    margin-left: 17px;
+}
+
+.secondary-btn {
+    border: 1px solid #ccc;
+}
+
+.secondary-btn:hover {
+    background: #fff;
+}
+
+
+/* =========================================================
+   HERO WEBSITE PREVIEW
+========================================================= */
+
+.hero-visual {
+    width: min(42vw,570px);
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.browser-window {
+    width: 100%;
+
+    background: #fff;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 35px 80px rgba(0,0,0,.12),
+        0 8px 25px rgba(0,0,0,.06);
+
+    transform: rotate(2deg);
+
+    transition: transform .5s ease;
+}
+
+.browser-top {
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 18px;
+
+    border-bottom: 1px solid #eee;
+}
+
+.browser-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.browser-dots i {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #ccc;
+}
+
+.browser-address {
+    margin: auto;
+
+    font-size: 10px;
+
+    color: #999;
+}
+
+.website-preview {
+    min-height: 420px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e6e6e1,
+            #fafaf7
+        );
+}
+
+.preview-nav {
+    padding: 25px 28px;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 12px;
+}
+
+.preview-nav div {
+    display: flex;
+    gap: 5px;
+}
+
+.preview-nav span {
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #222;
+}
+
+.preview-body {
+    padding: 65px 40px;
+}
+
+.preview-body small {
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.preview-body h2 {
+    font-family: "Manrope";
+
+    font-size: clamp(35px,4vw,57px);
+
+    line-height: .95;
+
+    letter-spacing: -3px;
+
+    margin: 20px 0 30px;
+}
+
+.preview-body h2 em {
+    color: #777;
+    font-style: normal;
+}
+
+.preview-button {
+    display: inline-block;
+
+    padding: 12px 18px;
+
+    background: #111;
+    color: #fff;
+
+    border-radius: 50px;
+
+    font-size: 10px;
+}
+
+.floating-card {
+    position: absolute;
+
+    background: #fff;
+
+    padding: 16px 19px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,.12);
+
+    display: flex;
+    flex-direction: column;
+
+    animation: floating 4s ease-in-out infinite;
+}
+
+.floating-card strong {
+    font-family: "Manrope";
+
+    font-size: 19px;
+}
+
+.floating-card small {
+    color: #888;
+
+    font-size: 10px;
+}
+
+.card-one {
+    left: -30px;
+    bottom: 45px;
+}
+
+.card-two {
+    right: -30px;
+    top: 45px;
+
+    animation-delay: 1s;
+}
+
+@keyframes floating {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.scroll-text {
+    position: absolute;
+
+    left: 8vw;
+    bottom: 30px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #888;
+}
+
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+.section {
+    padding: 130px 8vw;
+}
+
+.section-label {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: #888;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.section-label span {
+    color: #111;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro {
+    display: grid;
+
+    grid-template-columns: 180px 1fr;
+
+    gap: 70px;
+
+    border-top: 1px solid #ddd;
+}
+
+.intro-content {
+    max-width: 900px;
+}
+
+.intro h2 {
+    font-family: "Manrope";
+
+    font-size: clamp(40px,5.5vw,80px);
+
+    line-height: 1;
+
+    letter-spacing: -4px;
+}
+
+.intro h2 span {
+    color: #999;
+}
+
+.intro p {
+    max-width: 570px;
+
+    margin-top: 35px;
+
+    color: #666;
+
+    font-size: 18px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services {
+    background: #111;
+
+    color: #fff;
+}
+
+.services .section-label {
+    color: #777;
+}
+
+.services .section-label span {
+    color: #fff;
+}
+
+.section-heading {
+    margin-bottom: 65px;
+}
+
+.section-heading h2 {
+    font-family: "Manrope";
+
+    font-size: clamp(45px,6vw,82px);
+
+    line-height: .98;
+
+    letter-spacing: -4px;
+
+    margin-top: 25px;
+}
+
+.section-heading h2 span {
+    color: #666;
+}
+
+.service-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2,1fr);
+
+    gap: 1px;
+
+    background: #333;
+}
+
+.service-card {
+    min-height: 330px;
+
+    padding: 42px;
+
+    background: #111;
+
+    position: relative;
+
+    transition: .35s;
+}
+
+.service-card:hover {
+    background: #1d1d1d;
+}
+
+.service-card.large {
+    grid-row: span 2;
+
+    min-height: 661px;
+}
+
+.service-number {
+    position: absolute;
+
+    top: 40px;
+    right: 40px;
+
+    color: #555;
+
+    font-size: 11px;
+}
+
+.service-icon {
+    margin-bottom: 80px;
+
+    font-size: 32px;
+}
+
+.service-card h3 {
+    font-family: "Manrope";
+
+    font-size: 29px;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 14px;
+}
+
+.service-card p {
+    max-width: 390px;
+
+    color: #999;
+
+    line-height: 1.6;
+}
+
+.service-card a {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   WHY NOSIWEB
+========================================================= */
+
+.why-layout {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    margin-top: 75px;
+}
+
+.why-title h2 {
+    font-family: "Manrope";
+
+    font-size: clamp(55px,6vw,90px);
+
+    line-height: .92;
+
+    letter-spacing: -5px;
+}
+
+.why-title h2 span {
+    color: #aaa;
+}
+
+.why-item {
+    display: grid;
+
+    grid-template-columns: 45px 1fr;
+
+    gap: 20px;
+
+    padding: 30px 0;
+
+    border-top: 1px solid #ddd;
+}
+
+.why-item > span {
+    color: #999;
+
+    font-size: 11px;
+}
+
+.why-item h3 {
+    font-family: "Manrope";
+
+    font-size: 20px;
+
+    margin-bottom: 9px;
+}
+
+.why-item p {
+    max-width: 500px;
+
+    color: #777;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   SHOWCASE
+========================================================= */
+
+.showcase {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.showcase-box {
+    min-height: 650px;
+
+    padding: 90px;
+
+    border-radius: 35px;
+
+    background: #222;
+
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.showcase-box::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: 10%;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #777,
+            #333 55%,
+            transparent 70%
+        );
+
+    opacity: .5;
+}
+
+.showcase-text {
+    max-width: 620px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.showcase-text small {
+    color: #888;
+
+    letter-spacing: 2px;
+}
+
+.showcase-text h2 {
+    font-family: "Manrope";
+
+    font-size: clamp(50px,6vw,88px);
+
+    line-height: .93;
+
+    letter-spacing: -5px;
+
+    margin: 25px 0;
+}
+
+.showcase-text h2 span {
+    color: #888;
+}
+
+.showcase-text p {
+    max-width: 480px;
+
+    margin-bottom: 35px;
+
+    color: #aaa;
+
+    line-height: 1.6;
+}
+
+.white-btn {
+    display: inline-block;
+
+    padding: 15px 23px;
+
+    border-radius: 50px;
+
+    background: #fff;
+    color: #111;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.showcase-circle {
+    position: absolute;
+
+    right: 13%;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 280px;
+    height: 280px;
+
+    border: 1px solid #666;
+
+    border-radius: 50%;
+
+    display: grid;
+    place-items: center;
+}
+
+.circle-inner {
+    width: 175px;
+    height: 175px;
+
+    border-radius: 50%;
+
+    background: #f4f4f0;
+    color: #111;
+
+    display: grid;
+    place-items: center;
+
+    font-family: "Manrope";
+
+    font-size: 45px;
+    font-weight: 800;
+
+    box-shadow: 0 0 70px rgba(255,255,255,.15);
+}
+
+
+/* =========================================================
+   PRICING
+========================================================= */
+
+.pricing {
+    border-top: 1px solid #ddd;
+}
+
+.pricing-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 18px;
+}
+
+.price-card {
+    padding: 35px;
+
+    background: #fff;
+
+    border: 1px solid #e2e2de;
+
+    border-radius: 22px;
+
+    position: relative;
+}
+
+.price-card.featured {
+    background: #111;
+
+    color: #fff;
+}
+
+.popular {
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    padding: 7px 10px;
+
+    border-radius: 50px;
+
+    background: #333;
+
+    color: #fff;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+}
+
+.plan-name {
+    color: #888;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    font-weight: 700;
+}
+
+.price-card h3 {
+    font-family: "Manrope";
+
+    font-size: 53px;
+
+    letter-spacing: -3px;
+
+    margin: 20px 0 10px;
+}
+
+.plan-description {
+    min-height: 70px;
+
+    color: #777;
+
+    font-size: 14px;
+
+    line-height: 1.55;
+}
+
+.featured .plan-description {
+    color: #aaa;
+}
+
+.divider {
+    height: 1px;
+
+    margin: 25px 0;
+
+    background: #ddd;
+}
+
+.featured .divider {
+    background: #333;
+}
+
+.price-card ul {
+    list-style: none;
+}
+
+.price-card li {
+    padding: 9px 0;
+
+    font-size: 13px;
+}
+
+.plan-btn {
+    display: block;
+
+    padding: 14px;
+
+    margin-top: 30px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 50px;
+
+    text-align: center;
+
+    font-size: 12px;
+
+    transition: .25s;
+}
+
+.plan-btn:hover {
+    background: #111;
+
+    color: #fff;
+}
+
+.plan-btn.dark {
+    background: #fff;
+
+    color: #111;
+
+    border-color: #fff;
+}
+
+.price-note {
+    margin-top: 25px;
+
+    color: #999;
+
+    text-align: center;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   TESTIMONIAL
+========================================================= */
+
+.testimonial {
+    max-width: 1100px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.quote-mark {
+    height: 80px;
+
+    color: #bbb;
+
+    font-family: Georgia;
+
+    font-size: 100px;
+}
+
+blockquote {
+    font-family: "Manrope";
+
+    font-size: clamp(40px,5vw,70px);
+
+    line-height: 1;
+
+    letter-spacing: -4px;
+}
+
+blockquote span {
+    color: #999;
+}
+
+.quote-author {
+    margin-top: 30px;
+
+    color: #888;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.faq {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    border-top: 1px solid #ddd;
+}
+
+.faq-heading h2 {
+    font-family: "Manrope";
+
+    font-size: clamp(45px,5vw,75px);
+
+    line-height: .95;
+
+    letter-spacing: -4px;
+
+    margin-top: 30px;
+}
+
+.faq-heading h2 span {
+    color: #999;
+}
+
+.faq-list {
+    border-top: 1px solid #ddd;
+}
+
+.faq-item {
+    border-bottom: 1px solid #ddd;
+}
+
+.faq-question {
+    width: 100%;
+
+    padding: 25px 0;
+
+    border: 0;
+
+    background: transparent;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.faq-question span {
+    font-size: 22px;
+
+    font-weight: 400;
+
+    transition: .3s;
+}
+
+.faq-item.active .faq-question span {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+
+    overflow: hidden;
+
+    transition: max-height .4s ease;
+}
+
+.faq-answer p {
+    padding: 0 40px 25px 0;
+
+    color: #777;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.contact-box {
+    min-height: 560px;
+
+    padding: 75px;
+
+    border-radius: 35px;
+
+    background: #111;
+
+    color: #fff;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 50px;
+}
+
+.light {
+    color: #777;
+}
+
+.light span {
+    color: #fff;
+}
+
+.contact-content h2 {
+    font-family: "Manrope";
+
+    font-size: clamp(50px,6vw,85px);
+
+    line-height: .94;
+
+    letter-spacing: -5px;
+
+    margin: 30px 0;
+}
+
+.contact-content h2 span {
+    color: #777;
+}
+
+.contact-content p {
+    max-width: 430px;
+
+    color: #999;
+
+    line-height: 1.6;
+}
+
+.contact-actions {
+    min-width: 220px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.contact-btn {
+    padding: 17px 22px;
+
+    border-radius: 50px;
+
+    background: #fff;
+
+    color: #111;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: .25s;
+}
+
+.contact-btn:hover {
+    transform: translateY(-2px);
+}
+
+.contact-btn.outline {
+    background: transparent;
+
+    color: #fff;
+
+    border: 1px solid #444;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    padding: 45px 8vw 30px;
+
+    border-top: 1px solid #ddd;
+}
+
+.footer-top {
+    padding-bottom: 40px;
+
+    border-bottom: 1px solid #ddd;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.footer-logo {
+    font-family: "Manrope";
+
+    font-size: 27px;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+}
+
+.footer-logo span {
+    color: #777;
+}
+
+.footer-top p {
+    color: #888;
+
+    font-size: 13px;
+}
+
+.footer-bottom {
+    padding-top: 25px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #999;
+
+    font-size: 11px;
+}
+
+.footer-bottom div {
+    display: flex;
+
+    gap: 25px;
+}
+
+.footer-bottom a:hover {
+    color: #111;
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   RESPONSIVE TABLET
+========================================================= */
+
+@media (max-width:1000px) {
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .hero {
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+
+    .hero h1 {
+        font-size: 65px;
+    }
+
+    .hero-visual {
+        width: 44vw;
+    }
+
+    .section {
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+
+    .showcase-box {
+        padding: 60px;
+    }
+
+    .showcase-circle {
+        right: 7%;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE MOBILE
+========================================================= */
+
+@media (max-width:760px) {
+
+    .navbar {
+        height: 70px;
+
+        padding: 0 6vw;
+    }
+
+    .nav-links,
+    .nav-button {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links.open {
+        position: absolute;
+
+        top: 70px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 20px 6vw;
+
+        background: #f5f5f2;
+
+        border-bottom: 1px solid #ddd;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 0;
+    }
+
+    .nav-links.open a {
+        padding: 15px 0;
+
+        border-bottom: 1px solid #ddd;
+    }
+
+
+    .hero {
+        min-height: auto;
+
+        padding-top: 125px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 70px;
+    }
+
+    .hero h1 {
+        font-size: clamp(52px,15vw,78px);
+
+        letter-spacing: -4px;
+    }
+
+    .hero-text {
+        font-size: 16px;
+    }
+
+    .hero-visual {
+        width: 100%;
+    }
+
+    .website-preview {
+        min-height: 340px;
+    }
+
+    .card-one {
+        left: -8px;
+    }
+
+    .card-two {
+        right: -8px;
+    }
+
+    .scroll-text {
+        display: none;
+    }
+
+
+    .section {
+     
