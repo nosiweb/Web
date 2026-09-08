@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NosiWeb — Websites & Digital Services</title>
+<meta name="description" content="NosiWeb creates affordable websites, hosting, maintenance and practical online services.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#f4f4f0;color:#111;overflow-x:hidden}
+a{text-decoration:none;color:inherit}button,input,select,textarea{font:inherit}
+header{position:fixed;z-index:50;top:0;left:0;width:100%;height:72px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;transition:.3s}
+header.scrolled{background:#f4f4f0ee;backdrop-filter:blur(14px);border-bottom:1px solid #ddd}
+.logo{font-size:25px;font-weight:900;letter-spacing:-1px}.logo span{color:#888}
+nav{display:flex;gap:26px;font-size:14px}nav a:hover{color:#777}.navbtn{background:#111;color:#fff;padding:12px 20px;border-radius:30px;font-size:13px;font-weight:bold}
+.menu{display:none;border:0;background:none;font-size:27px}.mobile{display:none;position:fixed;z-index:45;top:72px;left:0;width:100%;background:#f4f4f0;padding:12px 6%;border-bottom:1px solid #ddd}.mobile.open{display:block}.mobile a{display:block;padding:15px 0;border-bottom:1px solid #ddd}
+.hero{min-height:100vh;padding:125px 7% 70px;display:flex;align-items:center;justify-content:space-between;gap:55px}.heroText{width:57%}.eyebrow{font-size:11px;letter-spacing:2px;color:#777;font-weight:bold;margin-bottom:25px}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#111;margin-right:7px}
+.hero h1{font-size:clamp(50px,8vw,105px);line-height:.88;letter-spacing:-6px}.muted{color:#999}.hero p{max-width:560px;color:#666;font-size:18px;line-height:1.6;margin-top:30px}.heroBtns{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.btn{padding:16px 23px;border-radius:30px;font-size:13px;font-weight:bold;transition:.25s;border:0;cursor:pointer}.btn:hover{transform:translateY(-3px)}.bright{background:#dfff3f;color:#111;box-shadow:0 10px 30px #b8d80055}.dark{background:#111;color:#fff}
+.heroCard{width:40%;position:relative}.browser{background:#fff;border-radius:25px;overflow:hidden;box-shadow:0 30px 70px #0002;transform:rotate(2deg)}.browserTop{height:44px;border-bottom:1px solid #eee;display:flex;align-items:center;padding:0 17px}.circles{display:flex;gap:5px}.circles i{width:7px;height:7px;border-radius:50%;background:#ccc}.url{margin:auto;color:#aaa;font-size:10px}
+.browserBody{height:420px;padding:55px 35px;background:linear-gradient(135deg,#ddd,#fafaf8)}.browserBody small{font-size:9px;letter-spacing:2px;color:#777}.browserBody h2{font-size:48px;line-height:.95;letter-spacing:-4px;margin-top:20px}.browserBody h2 span{color:#888}.mini{display:inline-block;margin-top:25px;background:#111;color:#fff;padding:11px 18px;border-radius:25px;font-size:10px}
+.badge{position:absolute;background:#fff;padding:14px 17px;border-radius:14px;box-shadow:0 15px 35px #0002;font-size:12px}.badge strong{display:block;font-size:20px}.badge small{color:#888}.b1{left:-25px;bottom:35px}.b2{right:-25px;top:35px}
+section:not(.hero){padding:110px 7%}.num{font-size:11px;letter-spacing:2px;color:#888;font-weight:bold}.title{font-size:clamp(42px,6vw,80px);line-height:.95;letter-spacing:-4px;margin-top:20px}.title span{color:#999}
+.intro{border-top:1px solid #ddd}.introInner{max-width:900px;margin:50px 0 0 14%}.introInner p{max-width:600px;color:#666;font-size:18px;line-height:1.7;margin-top:30px}
+.services{background:#111;color:#fff}.services .num{color:#777}.serviceGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#333;margin-top:60px}.service{background:#111;padding:40px;min-height:300px;transition:.3s}.service:hover{background:#1d1d1d}.service.big{grid-row:span 2;min-height:601px}.icon{font-size:34px;margin-bottom:65px}.service h3{font-size:27px;margin-bottom:12px}.service p{color:#999;line-height:1.6;max-width:430px}.service a{display:inline-block;margin-top:22px;font-size:13px}
+.plans{border-top:1px solid #ddd}.plansIntro{max-width:720px;color:#666;line-height:1.6;margin-top:25px}.free{display:inline-block;margin-top:20px;background:#111;color:#fff;padding:9px 14px;border-radius:20px;font-size:11px;font-weight:bold}
+.planGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:55px}.plan{background:#fff;border:1px solid #ddd;border-radius:22px;padding:34px;position:relative}.plan.pro{background:#111;color:#fff}.recommend{position:absolute;right:18px;top:18px;background:#dfff3f;color:#111;padding:7px 10px;border-radius:20px;font-size:8px;font-weight:bold}.planName{font-size:11px;letter-spacing:2px;font-weight:bold;color:#888}.plan h3{font-size:42px;letter-spacing:-3px;margin:18px 0 10px}.plan .desc{color:#777;line-height:1.5;min-height:65px;font-size:14px}.pro .desc{color:#aaa}.plan hr{border:0;border-top:1px solid #ddd;margin:23px 0}.pro hr{border-color:#333}.plan ul{list-style:none}.plan li{padding:7px 0;font-size:13px}.choose{display:block;width:100%;text-align:center;margin-top:24px;padding:14px;border-radius:30px;border:1px solid #ccc;background:transparent;font-size:12px;font-weight:bold;cursor:pointer}.pro .choose{background:#dfff3f;color:#111;border-color:#dfff3f}
+.cheap{margin-top:20px;padding:20px;border:1px dashed #bbb;border-radius:17px;color:#666;font-size:13px;line-height:1.6}
+.explore{background:#e9e9e3}.exploreGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:55px}.exploreCard{background:#fff;border-radius:20px;padding:28px;min-height:240px;border:1px solid #ddd}.exploreCard h3{font-size:22px;margin:45px 0 12px}.exploreCard p{color:#777;line-height:1.5;font-size:14px}
+.why{border-top:1px solid #ddd}.whyGrid{display:grid;grid-template-columns:1fr 1fr;gap:100px;margin-top:60px}.whyBig{font-size:clamp(50px,6vw,85px);line-height:.9;letter-spacing:-5px;font-weight:800}.whyBig span{color:#aaa}.whyItem{padding:27px 0;border-top:1px solid #ddd;display:grid;grid-template-columns:40px 1fr;gap:20px}.whyItem>span{font-size:11px;color:#999}.whyItem h3{font-size:20px;margin-bottom:8px}.whyItem p{color:#777;line-height:1.6}
+.query{border-top:1px solid #ddd}.queryBox{max-width:900px;margin-top:50px;background:#fff;border:1px solid #ddd;border-radius:25px;padding:35px}.formGrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field label{display:block;font-size:11px;font-weight:bold;color:#777;margin-bottom:8px}.field input,.field select,.field textarea{width:100%;border:1px solid #ddd;border-radius:12px;padding:13px;background:#fafafa;outline:none}.field textarea{min-height:130px;resize:vertical}.full{grid-column:1/-1}.send{margin-top:18px}.smallnote{font-size:11px;color:#888;margin-top:10px}
+.contact{padding-top:60px!important}.contactBox{background:#111;color:#fff;border-radius:34px;padding:70px;min-height:480px;display:flex;justify-content:space-between;align-items:flex-end;gap:50px}.contactBox h2{font-size:clamp(48px,6vw,82px);line-height:.9;letter-spacing:-5px;margin:22px 0}.contactBox h2 span{color:#999}.contactBox p{color:#999;max-width:500px;line-height:1.6}.contactButtons{display:flex;flex-direction:column;gap:12px;min-width:230px}.contactBtn{background:#fff;color:#111;padding:16px 20px;border-radius:30px;font-size:13px;font-weight:bold;display:flex;justify-content:space-between}.contactBtn.alt{background:transparent;color:#fff;border:1px solid #444}
+footer{border-top:1px solid #ddd;padding:55px 7% 30px}.footerGrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid #ddd}.footerBrand{font-size:28px;font-weight:900}.footerBrand span{color:#888}.footerCol h4{font-size:12px;margin-bottom:15px}.footerCol p,.footerCol a{display:block;color:#777;font-size:13px;line-height:1.8}.copyright{display:flex;justify-content:space-between;color:#999;font-size:11px;padding-top:25px}
+.overlay{position:fixed;z-index:100;inset:0;background:#0009;display:none;align-items:center;justify-content:center;padding:20px}.overlay.show{display:flex}.modal{width:min(610px,100%);max-height:92vh;overflow:auto;background:#f7f7f3;border-radius:25px;padding:30px;position:relative}.close{position:absolute;right:18px;top:15px;border:0;background:none;font-size:28px;cursor:pointer}.modal h2{font-size:34px;letter-spacing:-2px}.modal>p{color:#777;margin:8px 0 25px;font-size:14px}.modalGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.modal input,.modal select,.modal textarea{width:100%;padding:13px;border:1px solid #ddd;border-radius:11px;background:white;outline:none}.modal textarea{min-height:110px;resize:vertical}.modal label{display:block;font-size:11px;color:#777;font-weight:bold;margin-bottom:6px}.modal .full{grid-column:1/-1}.modalSubmit{margin-top:15px;width:100%;border:0;cursor:pointer;padding:15px;border-radius:30px;background:#dfff3f;font-weight:bold}.notice{font-size:11px;color:#888;margin-top:10px;line-height:1.5}
+.reveal{opacity:0;transform:translateY(25px);transition:.7s}.reveal.show{opacity:1;transform:none}
+@media(max-width:850px){nav,.navbtn{display:none}.menu{display:block}.hero{flex-direction:column;align-items:flex-start;padding-top:115px}.heroText,.heroCard{width:100%}.browser{transform:none}section:not(.hero){padding:85px 6%}.introInner{margin-left:0}.serviceGrid,.planGrid{grid-template-columns:1fr}.service.big{grid-row:auto;min-height:400px}.exploreGrid{grid-template-columns:1fr 1fr}.whyGrid{grid-template-columns:1fr;gap:55px}.contactBox{padding:45px;flex-direction:column;align-items:flex-start}.contactButtons{width:100%}.footerGrid{grid-template-columns:1fr 1fr}.copyright{flex-direction:column;gap:12px}}
+@media(max-width:520px){.heroBtns{flex-direction:column;width:100%}.btn{text-align:center}.badge{padding:11px}.b1{left:-5px}.b2{right:-5px}.exploreGrid,.formGrid,.modalGrid{grid-template-columns:1fr}.full,.modal .full{grid-column:auto}.contactBox{padding:35px}.footerGrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header id="header"><a class="logo" href="#home">Nosi<span>Web</span></a><nav><a href="#services">Services</a><a href="#plans">Plans</a><a href="#why">Why Us</a><a href="#query">Query</a><a href="#contact">Contact</a></nav><a class="navbtn" href="#plans">View Plans</a><button class="menu" id="menu">☰</button></header>
+<div class="mobile" id="mobile"><a href="#services">Services</a><a href="#plans">Plans</a><a href="#why">Why Us</a><a href="#query">Query</a><a href="#contact">Contact</a></div>
+
+<section class="hero" id="home"><div class="heroText"><div class="eyebrow"><span class="dot"></span>WEBSITE • HOSTING • MAINTENANCE • ONLINE SERVICES</div><h1>Build your<br>presence.<br><span class="muted">Grow online.</span></h1><p>NosiWeb creates modern, useful and affordable websites and digital solutions for individuals and small businesses.</p><div class="heroBtns"><a class="btn bright" href="#plans">🚀 Explore Plans</a><a class="btn dark" href="#services">Explore Services →</a></div></div>
+<div class="heroCard reveal"><div class="browser"><div class="browserTop"><div class="circles"><i></i><i></i><i></i></div><div class="url">nosiweb.github.io</div></div><div class="browserBody"><small>NOSIWEB DIGITAL</small><h2>Your idea.<br>Your website.<br><span>Your future.</span></h2><div class="mini">Let's build →</div></div></div><div class="badge b1"><strong>Affordable</strong><small>Simple plans</small></div><div class="badge b2"><strong>Responsive</strong><small>Every screen</small></div></div></section>
+
+<section class="intro"><div class="num">01 — NOSIWEB</div><div class="introInner"><h2 class="title">Useful digital solutions<br>without the <span>big-agency price.</span></h2><p>We create modern websites, online services and practical digital solutions that turn ideas into useful experiences.</p></div></section>
+
+<section class="services" id="services"><div class="num">02 — WHAT WE DO</div><h2 class="title">Everything you need<br>to go <span>online.</span></h2><div class="serviceGrid">
+<div class="service big reveal"><div class="icon">✦</div><h3>Website Building</h3><p>Responsive websites at low cost, tailored to your needs.</p><a href="#plans">See plans →</a></div>
+<div class="service reveal"><div class="icon">☁</div><h3>Hosting</h3><p>Get your website published and available online with simple hosting.</p><a href="#plans">View plans →</a></div>
+<div class="service reveal"><div class="icon">⚙</div><h3>Maintenance</h3><p>Keep your website working properly with maintenance and support.</p><a href="#plans">View Pro →</a></div>
+<div class="service reveal"><div class="icon">↗</div><h3>Website Updates</h3><p>Need new text, images, prices or other changes? Request an update.</p><a href="#plans">View Update →</a></div>
+<div class="service reveal"><div class="icon">◎</div><h3>Online Services</h3><p>Simple, affordable online services designed for everyday needs.</p><a href="#query">Send a query →</a></div>
+</div></section>
+
+<section class="plans" id="plans"><div class="num">03 — OUR PLANS</div><h2 class="title">Affordable websites<br>with simple <span>plans.</span></h2><p class="plansIntro">Simple pricing you can understand at a glance — 🍔 Basic, 🍕 Pro, and ☕ Updates.</p><div class="free">🎁 FIRST MONTH FREE — New customers can get their website built and published with no payment for the first month.</div>
+<div class="planGrid">
+<div class="plan reveal"><div class="planName">🍔 BASIC / MONTH</div><h3>Basic</h3><p class="desc">For a simple published website with the essentials.</p><hr><ul><li>✓ Website Published</li><li>✓ Hosting</li><li>✓ Subdomain</li><li>✕ Website Maintenance</li><li>☕ Website Updates — per update</li><li>✕ Ongoing Support</li></ul><button class="choose" data-plan="🍔 Basic / Month">Choose Basic →</button></div>
+<div class="plan pro reveal"><div class="recommend">RECOMMENDED</div><div class="planName">🍕 PRO / MONTH</div><h3>Pro</h3><p class="desc">For customers who want maintenance, updates and ongoing support.</p><hr><ul><li>✓ Website Published</li><li>✓ Hosting</li><li>✓ Subdomain</li><li>✓ Website Maintenance</li><li>✓ Website Updates — FREE</li><li>✓ Ongoing Support</li></ul><button class="choose" data-plan="🍕 Pro / Month">Choose Pro →</button></div>
+<div class="plan reveal"><div class="planName">☕ BASIC UPDATE / PER UPDATE</div><h3>Updates</h3><p class="desc">For individual updates on a Basic website.</p><hr><ul><li>✓ Text changes</li><li>✓ Image changes</li><li>✓ Price/service changes</li><li>✓ Small content updates</li><li>☕ Charged per update</li></ul><button class="choose" data-plan="☕ Basic Update / Per Update">Request Update →</button></div>
+</div>
+<div class="cheap"><b>💡 Why is it so cheap?</b><br>NosiWeb keeps the service simple and focuses on useful websites instead of expensive agency packages.<br><br>🎓 <b>Student-built</b> — practical experience while supporting studies through the work.<br>🌱 <b>Small & Independent</b> — no large office or expensive team behind the service.<br>⚙️ <b>Simple Websites</b> — useful websites without unnecessary agency costs.<br>🤝 <b>Fair Pricing</b> — designed to be easier to afford for individuals and small businesses.</div>
+</section>
+
+<section class="explore"><div class="num">04 — EXPLORE SERVICES</div><h2 class="title">What can NosiWeb<br>do <span>for you?</span></h2><div class="exploreGrid">
+<div class="exploreCard reveal"><div class="icon">🌐</div><h3>Website Building</h3><p>Modern responsive websites for individuals, organisations and small businesses.</p></div>
+<div class="exploreCard reveal"><div class="icon">☁️</div><h3>Hosting</h3><p>Get your website published and accessible online through a simple setup.</p></div>
+<div class="exploreCard reveal"><div class="icon">⚙️</div><h3>Maintenance</h3><p>Keep your website updated, working and supported after launch.</p></div>
+<div class="exploreCard reveal"><div class="icon">💻</div><h3>Online Services</h3><p>Practical and affordable digital help for everyday online needs.</p></div>
+</div></section>
+
+<section class="why" id="why"><div class="num">05 — WHY NOSIWEB</div><div class="whyGrid"><div class="whyBig">Simple.<br><span>Affordable.</span><br>Useful.</div><div>
+<div class="whyItem reveal"><span>01</span><div><h3>Student-built</h3><p>Building practical experience while supporting studies through the work.</p></div></div>
+<div class="whyItem reveal"><span>02</span><div><h3>Small & Independent</h3><p>No large office or expensive team behind the service.</p></div></div>
+<div class="whyItem reveal"><span>03</span><div><h3>Simple Websites</h3><p>Useful websites without unnecessary agency costs.</p></div></div>
+<div class="whyItem reveal"><span>04</span><div><h3>Fair Pricing</h3><p>The aim is to make a basic website easier to afford for individuals and small businesses.</p></div></div>
+</div></div></section>
+
+<section class="query" id="query"><div class="num">06 — HAVE A QUESTION?</div><h2 class="title">Tell me what<br>you <span>need.</span></h2><div class="queryBox"><form id="queryForm"><div class="formGrid">
+<div class="field"><label>NAME</label><input id="qName" required placeholder="Your name"></div><div class="field"><label>EMAIL</label><input id="qEmail" type="email" required placeholder="you@example.com"></div>
+<div class="field"><label>COUNTRY</label><input id="qCountry" placeholder="Your country"></div><div class="field"><label>MOBILE NUMBER</label><input id="qMobile" placeholder="Mobile number"></div>
+<div class="field full"><label>INTERESTED PLAN / SERVICE</label><select id="qPlan"><option>Not sure yet</option><option>🍔 Basic / Month</option><option>🍕 Pro / Month</option><option>☕ Basic Update / Per Update</option><option>Website Building</option><option>Hosting</option><option>Maintenance</option><option>Online Service</option></select></div>
+<div class="field full"><label>YOUR MESSAGE</label><textarea id="qMessage" required placeholder="Tell me what you need..."></textarea></div>
+</div><button class="btn dark send" type="submit">Send Inquiry ✉</button><p class="smallnote">Clicking send opens your email app with the inquiry ready to send.</p></form></div></section>
+
+<section class="contact" id="contact"><div class="contactBox"><div><div class="num">07 — CONTACT</div><h2>Let's build<br>something <span>useful.</span></h2><p>Have a website idea or need help with an online service? Send your details and I will get back to you.</p></div><div class="contactButtons"><a class="contactBtn" href="mailto:nosibul6294@gmail.com">Email NosiWeb <span>↗</span></a><a class="contactBtn alt" href="https://wa.me/916294665342" target="_blank" rel="noopener">WhatsApp <span>↗</span></a></div></div></section>
+
+<footer><div class="footerGrid">
+<div><div class="footerBrand">Nosi<span>Web</span></div><p style="color:#777;font-size:13px;line-height:1.7;margin-top:15px;max-width:280px">Modern websites, hosting, maintenance and practical online services.</p></div>
+<div class="footerCol"><h4>ORGANISATION</h4><p>NosiWeb</p><p>Kolkata, West Bengal, India</p><p>WB, India 731219</p></div>
+<div class="footerCol"><h4>CONTACT</h4><a href="mailto:nosibul6294@gmail.com">nosibul6294@gmail.com</a><p>Phone: Available soon</p><a href="https://wa.me/916294665342" target="_blank">WhatsApp</a></div>
+<div class="footerCol"><h4>SOCIAL</h4><a href="https://www.instagram.com/" target="_blank">Instagram — @nosiweb</a><a href="#plans">Plans</a><a href="#query">Send a Query</a></div>
+</div><div class="copyright"><span>© <span id="year"></span> NosiWeb. All rights reserved.</span><span>Built with NosiWeb</span></div></footer>
+
+<div class="overlay" id="orderOverlay"><div class="modal"><button class="close" id="closeModal">×</button><h2>Place Your Order</h2><p>Fill in your details and your email app will open with the order ready to send.</p>
+<form id="orderForm"><div class="modalGrid"><div><label>NAME</label><input id="oName" required placeholder="Enter your name"></div><div><label>EMAIL ADDRESS</label><input id="oEmail" type="email" required placeholder="you@example.com"></div><div><label>MOBILE NUMBER</label><input id="oMobile" required placeholder="Mobile number"></div><div><label>COUNTRY</label><input id="oCountry" placeholder="Your country"></div><div class="full"><label>SELECTED PLAN</label><select id="oPlan"><option>🍔 Basic / Month</option><option>🍕 Pro / Month</option><option>☕ Basic Update / Per Update</option></select></div><div class="full"><label>COMMENT</label><textarea id="oComment" placeholder="Tell me anything important about your project..."></textarea></div></div>
+<button class="modalSubmit" type="submit">Send Order Request ✉</button><div class="notice">No information is stored by this page. Your email app will prepare the message for you.</div></form></div></div>
+
+<script>
+const EMAIL="nosibul6294@gmail.com";
+const header=document.getElementById("header");
+window.addEventListener("scroll",()=>header.classList.toggle("scrolled",scrollY>25));
+const mobile=document.getElementById("mobile");
+document.getElementById("menu").onclick=()=>mobile.classList.toggle("open");
+document.querySelectorAll(".mobile a").forEach(a=>a.onclick=()=>mobile.classList.remove("open"));
+
+const overlay=document.getElementById("orderOverlay"),planSelect=document.getElementById("oPlan");
+document.querySelectorAll(".choose").forEach(btn=>btn.onclick=()=>{planSelect.value=btn.dataset.plan;overlay.classList.add("show");document.body.style.overflow="hidden"});
+function closeModal(){overlay.classList.remove("show");document.body.style.overflow=""}
+document.getElementById("closeModal").onclick=closeModal;
+overlay.onclick=e=>{if(e.target===overlay)closeModal()};
+
+document.getElementById("orderForm").onsubmit=e=>{
+e.preventDefault();
+const name=document.getElementById("oName").value,email=document.getElementById("oEmail").value,mobile=document.getElementById("oMobile").value,country=document.getElementById("oCountry").value||"Not provided",plan=document.getElementById("oPlan").value,comment=document.getElementById("oComment").value||"No additional comment.";
+const subject=encodeURIComponent("NosiWeb Order Request — "+plan);
+const body=encodeURIComponent("Hello NosiWeb,\n\nI would like to place an order.\n\nName: "+name+"\nEmail: "+email+"\nMobile: "+mobile+"\nCountry: "+country+"\nSelected Plan: "+plan+"\nComment: "+comment+"\n\nPlease contact me regarding the next steps.\n\nThank you.");
+window.location.href="mailto:"+EMAIL+"?subject="+subject+"&body="+body;
+};
+
+document.getElementById("queryForm").onsubmit=e=>{
+e.preventDefault();
+const name=document.getElementById("qName").value,email=document.getElementById("qEmail").value,country=document.getElementById("qCountry").value||"Not provided",mobile=document.getElementById("qMobile").value||"Not provided",plan=document.getElementById("qPlan").value,message=document.getElementById("qMessage").value;
+const subject=encodeURIComponent("NosiWeb Inquiry — "+name);
+const body=encodeURIComponent("Hello NosiWeb,\n\nI have an inquiry.\n\nName: "+name+"\nEmail: "+email+"\nCountry: "+country+"\nMobile: "+mobile+"\nInterested Plan/Service: "+plan+"\n\nMessage:\n"+message+"\n\nThank you.");
+window.location.href="mailto:"+EMAIL+"?subject="+subject+"&body="+body;
+};
+
+const observer=new IntersectionObserver(entries=>entries.forEach(x=>{if(x.isIntersecting){x.target.classList.add("show");observer.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(x=>observer.observe(x));
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
